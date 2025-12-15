@@ -16,7 +16,13 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.example.examplemod.ExampleMod"
+            "com.github.corrinvc.morelightingvariants.MoreLightingVariantsFabric"
+        ],
+        "client": [
+            "com.github.corrinvc.morelightingvariants.MoreLightingVariantsFabricClient"
+        ],
+        "fabric-datagen": [
+            "com.github.corrinvc.morelightingvariants.datagen.FabricDataGen"
         ]
     },
     "mixins": [

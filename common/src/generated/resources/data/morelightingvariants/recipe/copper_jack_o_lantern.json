@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "P": "minecraft:carved_pumpkin",
+    "t": "minecraft:copper_torch"
+  },
+  "pattern": [
+    "P",
+    "t"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morelightingvariants:copper_jack_o_lantern"
+  }
+}
