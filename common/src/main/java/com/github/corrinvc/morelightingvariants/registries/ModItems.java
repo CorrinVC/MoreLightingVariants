@@ -1,8 +1,6 @@
 package com.github.corrinvc.morelightingvariants.registries;
 
 import com.github.corrinvc.morelightingvariants.Constants;
-import com.github.corrinvc.morelightingvariants.platform.Services;
-import com.nimbusds.jose.util.Resource;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -11,9 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.Block;
 
-import javax.xml.crypto.Data;
 import java.util.function.BiConsumer;
-import java.util.function.Function;
 
 public class ModItems {
 
@@ -55,6 +51,6 @@ public class ModItems {
     }
 
     private static ResourceKey<Item> blockItemKey(ResourceKey<Block> blockKey) {
-        return itemKey(blockKey.location().getPath());
+        return itemKey(blockKey.identifier().getPath());
     }
 }
