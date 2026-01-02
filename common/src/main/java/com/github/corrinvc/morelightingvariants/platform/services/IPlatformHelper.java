@@ -1,13 +1,9 @@
 package com.github.corrinvc.morelightingvariants.platform.services;
 
-import net.minecraft.core.Registry;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.CarvedPumpkinBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-
-import java.util.function.Function;
 
 public interface IPlatformHelper {
 
@@ -44,4 +40,6 @@ public interface IPlatformHelper {
     }
 
     CarvedPumpkinBlock getCarvedPumpkinBlock(BlockBehaviour.Properties properties);
+
+    CandleCakeBlock getCandleCakeBlock(Block candleBlock, BlockBehaviour.Properties properties);
 }

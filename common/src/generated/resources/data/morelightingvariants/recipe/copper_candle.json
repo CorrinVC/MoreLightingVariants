@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "c": "minecraft:copper_ingot",
+    "h": "minecraft:honeycomb",
+    "s": "minecraft:string"
+  },
+  "pattern": [
+    "s",
+    "h",
+    "c"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morelightingvariants:copper_candle"
+  }
+}

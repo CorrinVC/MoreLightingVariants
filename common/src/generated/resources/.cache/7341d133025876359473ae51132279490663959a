@@ -1,4 +1,8 @@
-// 1.21.10	-999999999-01-01T00:00:00	MoreLightingVariants/Block Loot Tables
+// 1.21.9	-999999999-01-01T00:00:00	MoreLightingVariants/Block Loot Tables
 c4d51430d7b544f1bbf1c6d8c356fa69da3184ed data/morelightingvariants/loot_table/blocks/copper_campfire.json
+ec459658f47db462cbe53e4f8469cd74c739ce66 data/morelightingvariants/loot_table/blocks/copper_candle.json
+705f37ab1b2dc95d3bdd23e2010c6192893ae51b data/morelightingvariants/loot_table/blocks/copper_candle_cake.json
 e304059a0e280f1c186ec48b0ff7a5fd314aa6a3 data/morelightingvariants/loot_table/blocks/copper_jack_o_lantern.json
+0e48563aa7777b356547d5df1249fa00153fe2ea data/morelightingvariants/loot_table/blocks/exposed_copper_candle.json
 f9ccf6fa8c07c772c2d42de6dc42f3549c7d75da data/morelightingvariants/loot_table/blocks/soul_jack_o_lantern.json
+f163e01647ce3b1ba7eb766c5b11eacb63656912 data/morelightingvariants/loot_table/blocks/weathered_copper_candle.json

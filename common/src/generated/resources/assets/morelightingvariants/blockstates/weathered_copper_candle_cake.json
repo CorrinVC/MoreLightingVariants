@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "morelightingvariants:block/weathered_copper_candle_cake"
+    },
+    "lit=true": {
+      "model": "morelightingvariants:block/weathered_copper_candle_cake_lit"
+    }
+  }
+}

@@ -1,8 +1,6 @@
 package com.github.corrinvc.morelightingvariants.registries;
 
 import com.github.corrinvc.morelightingvariants.Constants;
-import com.github.corrinvc.morelightingvariants.platform.Services;
-import com.nimbusds.jose.util.Resource;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -11,9 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.ItemContainerContents;
 import net.minecraft.world.level.block.Block;
 
-import javax.xml.crypto.Data;
 import java.util.function.BiConsumer;
-import java.util.function.Function;
 
 public class ModItems {
 
@@ -23,6 +19,13 @@ public class ModItems {
             blockItemKey(ModBlocks.SOUL_JACK_O_LANTERN_KEY);
     public static final ResourceKey<Item> COPPER_CAMPFIRE_KEY =
             blockItemKey(ModBlocks.COPPER_CAMPFIRE_KEY);
+
+    public static final ResourceKey<Item> COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> EXPOSED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.EXPOSED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WEATHERED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WEATHERED_COPPER_CANDLE_KEY);
 
     public static final Item COPPER_JACK_O_LANTERN = createBlockItem(
             ModBlocks.COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY
@@ -34,6 +37,16 @@ public class ModItems {
             ModBlocks.COPPER_CAMPFIRE,
             new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY),
             COPPER_CAMPFIRE_KEY
+    );
+
+    public static final Item COPPER_CANDLE = createBlockItem(
+            ModBlocks.COPPER_CANDLE, COPPER_CANDLE_KEY
+    );
+    public static final Item EXPOSED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY
+    );
+    public static final Item WEATHERED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY
     );
 
     private static Item createBlockItem(Block block, ResourceKey<Item> id) {
@@ -48,6 +61,9 @@ public class ModItems {
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
         consumer.accept(SOUL_JACK_O_LANTERN, SOUL_JACK_O_LANTERN_KEY);
         consumer.accept(COPPER_CAMPFIRE, COPPER_CAMPFIRE_KEY);
+        consumer.accept(COPPER_CANDLE, COPPER_CANDLE_KEY);
+        consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);
+        consumer.accept(WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY);
     }
 
     private static ResourceKey<Item> itemKey(String name) {
