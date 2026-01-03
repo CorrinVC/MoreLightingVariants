@@ -18,8 +18,10 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add(ModBlocks.COPPER_JACK_O_LANTERN, "Copper Jack o'Lantern");
         builder.add(ModBlocks.SOUL_JACK_O_LANTERN, "Soul Jack o'Lantern");
         builder.add(ModBlocks.COPPER_CAMPFIRE, "Copper Campfire");
+
         builder.add(ModBlocks.COPPER_CANDLE, "Copper Candle");
         builder.add(ModBlocks.EXPOSED_COPPER_CANDLE, "Exposed Copper Candle");
         builder.add(ModBlocks.WEATHERED_COPPER_CANDLE, "Weathered Copper Candle");
+        builder.add(ModBlocks.OXIDIZED_COPPER_CANDLE, "Oxidized Copper Candle");
     }
 }

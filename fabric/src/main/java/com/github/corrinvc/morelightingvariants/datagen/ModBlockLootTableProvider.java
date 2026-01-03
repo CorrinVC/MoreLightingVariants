@@ -31,7 +31,11 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
         add(ModBlocks.COPPER_CANDLE, this::createCandleDrops);
         add(ModBlocks.EXPOSED_COPPER_CANDLE, this::createCandleDrops);
         add(ModBlocks.WEATHERED_COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.OXIDIZED_COPPER_CANDLE, this::createCandleDrops);
         add(ModBlocks.COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.COPPER_CANDLE));
+        add(ModBlocks.EXPOSED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.COPPER_CANDLE));
+        add(ModBlocks.WEATHERED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.COPPER_CANDLE));
+        add(ModBlocks.OXIDIZED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.COPPER_CANDLE));
         //dropSelf();
     }
 }

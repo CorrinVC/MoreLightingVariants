@@ -66,6 +66,10 @@ public class MoreLightingVariantsNeo {
             event.accept(ModBlocks.SOUL_JACK_O_LANTERN);
         } else if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
             event.accept(ModBlocks.COPPER_CAMPFIRE);
+            event.accept(ModBlocks.COPPER_CANDLE);
+            event.accept(ModBlocks.EXPOSED_COPPER_CANDLE);
+            event.accept(ModBlocks.WEATHERED_COPPER_CANDLE);
+            event.accept(ModBlocks.OXIDIZED_COPPER_CANDLE);
         }
     }
 

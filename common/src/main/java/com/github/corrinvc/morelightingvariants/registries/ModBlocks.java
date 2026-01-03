@@ -26,12 +26,16 @@ public class ModBlocks {
             blockKey("exposed_copper_candle");
     public static final ResourceKey<Block> WEATHERED_COPPER_CANDLE_KEY =
             blockKey("weathered_copper_candle");
+    public static final ResourceKey<Block> OXIDIZED_COPPER_CANDLE_KEY =
+            blockKey("oxidized_copper_candle");
     public static final ResourceKey<Block> COPPER_CANDLE_CAKE_KEY =
             blockKey("copper_candle_cake");
     public static final ResourceKey<Block> EXPOSED_COPPER_CANDLE_CAKE_KEY =
             blockKey("exposed_copper_candle_cake");
     public static final ResourceKey<Block> WEATHERED_COPPER_CANDLE_CAKE_KEY =
             blockKey("weathered_copper_candle_cake");
+    public static final ResourceKey<Block> OXIDIZED_COPPER_CANDLE_CAKE_KEY =
+            blockKey("oxidized_copper_candle_cake_key");
 
     public static final Block COPPER_JACK_O_LANTERN = Services.PLATFORM.getCarvedPumpkinBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.JACK_O_LANTERN)
@@ -63,6 +67,11 @@ public class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).mapColor(MapColor.WARPED_STEM)
                     .setId(WEATHERED_COPPER_CANDLE_KEY)
     );
+    public static final Block OXIDIZED_COPPER_CANDLE = new CopperCandleBlock(
+            WeatheringCopper.WeatherState.OXIDIZED,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).mapColor(MapColor.WARPED_NYLIUM)
+                    .setId(OXIDIZED_COPPER_CANDLE_KEY)
+    );
 
     public static final Block COPPER_CANDLE_CAKE = Services.PLATFORM.getCandleCakeBlock(
             COPPER_CANDLE,
@@ -79,6 +88,11 @@ public class ModBlocks {
             BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)
                     .setId(WEATHERED_COPPER_CANDLE_CAKE_KEY)
     );
+    public static final Block OXIDIZED_COPPER_CANDLE_CAKE = Services.PLATFORM.getCandleCakeBlock(
+            OXIDIZED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)
+                    .setId(OXIDIZED_COPPER_CANDLE_CAKE_KEY)
+    );
 
     public static void register(BiConsumer<Block, ResourceKey<Block>> consumer) {
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
@@ -88,9 +102,12 @@ public class ModBlocks {
         consumer.accept(COPPER_CANDLE, COPPER_CANDLE_KEY);
         consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);
         consumer.accept(WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY);
+        consumer.accept(OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY);
+
         consumer.accept(COPPER_CANDLE_CAKE, COPPER_CANDLE_CAKE_KEY);
         consumer.accept(EXPOSED_COPPER_CANDLE_CAKE, EXPOSED_COPPER_CANDLE_CAKE_KEY);
         consumer.accept(WEATHERED_COPPER_CANDLE_CAKE, WEATHERED_COPPER_CANDLE_CAKE_KEY);
+        consumer.accept(OXIDIZED_COPPER_CANDLE_CAKE, OXIDIZED_COPPER_CANDLE_CAKE_KEY);
     }
 
     private static ResourceKey<Block> blockKey(String name) {

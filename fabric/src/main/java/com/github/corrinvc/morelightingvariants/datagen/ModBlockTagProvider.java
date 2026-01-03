@@ -22,8 +22,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.CANDLES)
                 .add(ModBlocks.COPPER_CANDLE,
                      ModBlocks.EXPOSED_COPPER_CANDLE,
-                     ModBlocks.WEATHERED_COPPER_CANDLE);
-        valueLookupBuilder(BlockTags.CANDLE_CAKES).add(ModBlocks.COPPER_CANDLE_CAKE);
+                     ModBlocks.WEATHERED_COPPER_CANDLE,
+                     ModBlocks.OXIDIZED_COPPER_CANDLE);
+        valueLookupBuilder(BlockTags.CANDLE_CAKES)
+                .add(ModBlocks.COPPER_CANDLE_CAKE,
+                     ModBlocks.EXPOSED_COPPER_CANDLE_CAKE,
+                     ModBlocks.WEATHERED_COPPER_CANDLE,
+                     ModBlocks.OXIDIZED_COPPER_CANDLE_CAKE);
 
         valueLookupBuilder(BlockTags.SWORD_EFFICIENT)
                 .add(ModBlocks.COPPER_JACK_O_LANTERN,

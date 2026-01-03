@@ -1,5 +1,8 @@
 {
   "values": [
-    "morelightingvariants:copper_candle_cake"
+    "morelightingvariants:copper_candle_cake",
+    "morelightingvariants:exposed_copper_candle_cake",
+    "morelightingvariants:weathered_copper_candle",
+    "morelightingvariants:oxidized_copper_candle_cake_key"
   ]
 }

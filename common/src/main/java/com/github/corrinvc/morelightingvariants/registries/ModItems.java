@@ -26,6 +26,8 @@ public class ModItems {
             blockItemKey(ModBlocks.EXPOSED_COPPER_CANDLE_KEY);
     public static final ResourceKey<Item> WEATHERED_COPPER_CANDLE_KEY =
             blockItemKey(ModBlocks.WEATHERED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> OXIDIZED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.OXIDIZED_COPPER_CANDLE_KEY);
 
     public static final Item COPPER_JACK_O_LANTERN = createBlockItem(
             ModBlocks.COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY
@@ -48,6 +50,9 @@ public class ModItems {
     public static final Item WEATHERED_COPPER_CANDLE = createBlockItem(
             ModBlocks.WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY
     );
+    public static final Item OXIDIZED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY
+    );
 
     private static Item createBlockItem(Block block, ResourceKey<Item> id) {
         return createBlockItem(block, new Item.Properties(), id);
@@ -61,9 +66,11 @@ public class ModItems {
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
         consumer.accept(SOUL_JACK_O_LANTERN, SOUL_JACK_O_LANTERN_KEY);
         consumer.accept(COPPER_CAMPFIRE, COPPER_CAMPFIRE_KEY);
+
         consumer.accept(COPPER_CANDLE, COPPER_CANDLE_KEY);
         consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);
         consumer.accept(WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY);
+        consumer.accept(OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY);
     }
 
     private static ResourceKey<Item> itemKey(String name) {

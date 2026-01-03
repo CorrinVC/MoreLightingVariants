@@ -26,6 +26,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.COPPER_CANDLE, ModBlocks.COPPER_CANDLE_CAKE);
         blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.EXPOSED_COPPER_CANDLE, ModBlocks.EXPOSED_COPPER_CANDLE_CAKE);
         blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.WEATHERED_COPPER_CANDLE, ModBlocks.WEATHERED_COPPER_CANDLE_CAKE);
+        blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.OXIDIZED_COPPER_CANDLE, ModBlocks.OXIDIZED_COPPER_CANDLE_CAKE);
     }
 
     @Override

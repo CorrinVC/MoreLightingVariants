@@ -50,6 +50,10 @@ public class MoreLightingVariantsFabric implements ModInitializer {
         ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.FUNCTIONAL_BLOCKS)
                 .register((itemGroup) -> {
                     itemGroup.accept(ModBlocks.COPPER_CAMPFIRE);
+                    itemGroup.accept(ModBlocks.COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.EXPOSED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.WEATHERED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.OXIDIZED_COPPER_CANDLE);
                 });
     }
 }

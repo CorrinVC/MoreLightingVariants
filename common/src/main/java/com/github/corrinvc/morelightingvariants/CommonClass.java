@@ -1,6 +1,7 @@
 package com.github.corrinvc.morelightingvariants;
 
 import com.github.corrinvc.morelightingvariants.block.CopperCandleBlock;
+import com.github.corrinvc.morelightingvariants.block.ModWeatheringCopper;
 import com.github.corrinvc.morelightingvariants.platform.Services;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
@@ -24,7 +25,7 @@ public class CommonClass {
         // we have an interface in the common code and use a loader specific implementation to delegate our call to
         // the platform specific approach.
         if (Services.PLATFORM.isModLoaded(Constants.MOD_ID)) {
-            CopperCandleBlock.initializeBlockMaps();
+            ModWeatheringCopper.ModWeatheringStateLists.initializeBlockMaps();
         }
 
 

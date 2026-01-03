@@ -25,9 +25,9 @@ import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.Optional;
 
-public class CopperCandleBlock extends CandleBlock implements WeatheringCopper {
+public class CopperCandleBlock extends CandleBlock implements ModWeatheringCopper {
 
-    public static ImmutableBiMap<Block, Block> NEXT_CANDLE_BY_BLOCK, PREVIOUS_CANDLE_BY_BLOCK;
+//    public static ImmutableBiMap<Block, Block> NEXT_CANDLE_BY_BLOCK, PREVIOUS_CANDLE_BY_BLOCK;
 
     private final WeatheringCopper.WeatherState weatheringState;
 
@@ -36,36 +36,33 @@ public class CopperCandleBlock extends CandleBlock implements WeatheringCopper {
         this.weatheringState = weatheringState;
     }
 
-    public static void initializeBlockMaps() {
-        NEXT_CANDLE_BY_BLOCK = new ImmutableBiMap.Builder<Block, Block>()
-                .put(ModBlocks.COPPER_CANDLE, ModBlocks.EXPOSED_COPPER_CANDLE)
-                .put(ModBlocks.EXPOSED_COPPER_CANDLE, ModBlocks.WEATHERED_COPPER_CANDLE)
-                .build();
-        PREVIOUS_CANDLE_BY_BLOCK = new ImmutableBiMap.Builder<Block, Block>()
-                .put(ModBlocks.EXPOSED_COPPER_CANDLE, ModBlocks.COPPER_CANDLE)
-                .put(ModBlocks.WEATHERED_COPPER_CANDLE, ModBlocks.EXPOSED_COPPER_CANDLE)
-                .build();
-    }
-
-    private static Optional<Block> getNextCandle(BlockState state) {
-        if(state.is(ModBlocks.COPPER_CANDLE)) return Optional.of(ModBlocks.EXPOSED_COPPER_CANDLE);
-        else return Optional.empty();
-    }
-
-    static Optional<Block> getNext(Block block) {
-        System.out.println(Optional.ofNullable(NEXT_CANDLE_BY_BLOCK.get(block)));
-        return Optional.ofNullable(NEXT_CANDLE_BY_BLOCK.get(block));
-    }
-
-    @Override
-    public Optional<BlockState> getNext(BlockState state) {
-        return getNext(state.getBlock()).map((block) -> block.withPropertiesOf(state));
-    }
-
-
-    private Optional<BlockState> getPrevious(BlockState state) {
-        return Optional.ofNullable(PREVIOUS_CANDLE_BY_BLOCK.get(state.getBlock())).map((block) -> block.withPropertiesOf(state));
-    }
+//    public static void initializeBlockMaps() {
+//        NEXT_CANDLE_BY_BLOCK = new ImmutableBiMap.Builder<Block, Block>()
+//                .put(ModBlocks.COPPER_CANDLE, ModBlocks.EXPOSED_COPPER_CANDLE)
+//                .put(ModBlocks.EXPOSED_COPPER_CANDLE, ModBlocks.WEATHERED_COPPER_CANDLE)
+//                .put(ModBlocks.WEATHERED_COPPER_CANDLE, ModBlocks.OXIDIZED_COPPER_CANDLE)
+//                .build();
+//        PREVIOUS_CANDLE_BY_BLOCK = new ImmutableBiMap.Builder<Block, Block>()
+//                .put(ModBlocks.EXPOSED_COPPER_CANDLE, ModBlocks.COPPER_CANDLE)
+//                .put(ModBlocks.WEATHERED_COPPER_CANDLE, ModBlocks.EXPOSED_COPPER_CANDLE)
+//                .put(ModBlocks.OXIDIZED_COPPER_CANDLE, ModBlocks.WEATHERED_COPPER_CANDLE)
+//                .build();
+//    }
+//
+//    static Optional<Block> getNext(Block block) {
+//        System.out.println(Optional.ofNullable(NEXT_CANDLE_BY_BLOCK.get(block)));
+//        return Optional.ofNullable(NEXT_CANDLE_BY_BLOCK.get(block));
+//    }
+//
+//    @Override
+//    public Optional<BlockState> getNext(BlockState state) {
+//        return getNext(state.getBlock()).map((block) -> block.withPropertiesOf(state));
+//    }
+//
+//
+//    private Optional<BlockState> getPrevious(BlockState state) {
+//        return Optional.ofNullable(PREVIOUS_CANDLE_BY_BLOCK.get(state.getBlock())).map((block) -> block.withPropertiesOf(state));
+//    }
 
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
         this.changeOverTime(state, level, pos, random);
@@ -78,35 +75,35 @@ public class CopperCandleBlock extends CandleBlock implements WeatheringCopper {
 
     @Override
     protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-        if(stack.is(ItemTags.AXES) && player.getAbilities().mayBuild) {
-            Optional<BlockState> optional = this.getPrevious(state);
-            if(optional.isPresent()) {
-                playFanfare(level, pos, player, state, SoundEvents.AXE_SCRAPE, 3005);
-
-                if(player instanceof ServerPlayer) {
-                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, pos, stack);
-                }
-
-                level.setBlock(pos, optional.get(), 11);
-                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, optional.get()));
-                if(player != null) {
-                    stack.hurtAndBreak(1, player, hand.asEquipmentSlot());
-                }
-
-                return InteractionResult.SUCCESS;
-            }
-        }
-
-        return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
+//        if(stack.is(ItemTags.AXES) && player.getAbilities().mayBuild) {
+//            Optional<BlockState> optional = this.getPrevious(state);
+//            if(optional.isPresent()) {
+//                playFanfare(level, pos, player, state, SoundEvents.AXE_SCRAPE, 3005);
+//
+//                if(player instanceof ServerPlayer) {
+//                    CriteriaTriggers.ITEM_USED_ON_BLOCK.trigger((ServerPlayer) player, pos, stack);
+//                }
+//
+//                level.setBlock(pos, optional.get(), 11);
+//                level.gameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Context.of(player, optional.get()));
+//                if(player != null) {
+//                    stack.hurtAndBreak(1, player, hand.asEquipmentSlot());
+//                }
+//
+//                return InteractionResult.SUCCESS;
+//            }
+//        }
+        Optional<InteractionResult> result = useAxeOn(stack, state, level, pos, player, hand);
+        return result.orElseGet(() -> super.useItemOn(stack, state, level, pos, player, hand, hitResult));
     }
 
-    private void playFanfare(Level level, BlockPos pos, Player player, BlockState state, SoundEvent sound, int event) {
-        level.playSound(player, pos, sound, SoundSource.BLOCKS, 1.0f, 1.0f);
-        level.levelEvent(player, event, pos, 0);
-    }
+//    private void playFanfare(Level level, BlockPos pos, Player player, BlockState state, SoundEvent sound, int event) {
+//        level.playSound(player, pos, sound, SoundSource.BLOCKS, 1.0f, 1.0f);
+//        level.levelEvent(player, event, pos, 0);
+//    }
 
     @Override
-    public WeatherState getAge() {
+    public WeatheringCopper.WeatherState getAge() {
         return this.weatheringState;
     }
 }
