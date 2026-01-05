@@ -1,6 +1,6 @@
 // 1.21.9	-999999999-01-01T00:00:00	MoreLightingVariants/Tags for minecraft:block
 c19c13a9c22587a3dfa040f39301122a56c12a77 data/minecraft/tags/block/campfires.json
-9c16a3be8096b74809d7c62d04386dab8b4ac475 data/minecraft/tags/block/candle_cakes.json
-0e077e18453452d88614c15c97b197e7e3548e03 data/minecraft/tags/block/candles.json
+23fdaf95def147b67a88d6540c03966bea6ae6fe data/minecraft/tags/block/candle_cakes.json
+ead6619c28495b94807d727f55a0dd85c019f5c3 data/minecraft/tags/block/candles.json
 13da3deb366f87e68797b9d1c94b3430046dc12d data/minecraft/tags/block/mineable/axe.json
 c31b931e7634afee3e8dc234dbe512efb1362096 data/minecraft/tags/block/sword_efficient.json

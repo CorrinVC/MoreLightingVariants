@@ -29,6 +29,15 @@ public class ModItems {
     public static final ResourceKey<Item> OXIDIZED_COPPER_CANDLE_KEY =
             blockItemKey(ModBlocks.OXIDIZED_COPPER_CANDLE_KEY);
 
+    public static final ResourceKey<Item> WAXED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WAXED_EXPOSED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WAXED_WEATHERED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WAXED_OXIDIZED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE_KEY);
+
     public static final Item COPPER_JACK_O_LANTERN = createBlockItem(
             ModBlocks.COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY
     );
@@ -54,6 +63,19 @@ public class ModItems {
             ModBlocks.OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY
     );
 
+    public static final Item WAXED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_COPPER_CANDLE, WAXED_COPPER_CANDLE_KEY
+    );
+    public static final Item WAXED_EXPOSED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_EXPOSED_COPPER_CANDLE, WAXED_EXPOSED_COPPER_CANDLE_KEY
+    );
+    public static final Item WAXED_WEATHERED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_WEATHERED_COPPER_CANDLE, WAXED_WEATHERED_COPPER_CANDLE_KEY
+    );
+    public static final Item WAXED_OXIDIZED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE, WAXED_OXIDIZED_COPPER_CANDLE_KEY
+    );
+
     private static Item createBlockItem(Block block, ResourceKey<Item> id) {
         return createBlockItem(block, new Item.Properties(), id);
     }
@@ -71,6 +93,11 @@ public class ModItems {
         consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);
         consumer.accept(WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY);
         consumer.accept(OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY);
+
+        consumer.accept(WAXED_COPPER_CANDLE, WAXED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_EXPOSED_COPPER_CANDLE, WAXED_EXPOSED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_WEATHERED_COPPER_CANDLE, WAXED_WEATHERED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_OXIDIZED_COPPER_CANDLE, WAXED_OXIDIZED_COPPER_CANDLE_KEY);
     }
 
     private static ResourceKey<Item> itemKey(String name) {

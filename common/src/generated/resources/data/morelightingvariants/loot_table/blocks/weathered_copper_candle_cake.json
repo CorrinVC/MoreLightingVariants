@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "morelightingvariants:copper_candle"
+          "name": "morelightingvariants:weathered_copper_candle"
         }
       ],
       "rolls": 1.0

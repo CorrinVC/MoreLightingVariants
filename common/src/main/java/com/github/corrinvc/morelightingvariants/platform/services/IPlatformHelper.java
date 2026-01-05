@@ -40,6 +40,4 @@ public interface IPlatformHelper {
     }
 
     CarvedPumpkinBlock getCarvedPumpkinBlock(BlockBehaviour.Properties properties);
-
-    CandleCakeBlock getCandleCakeBlock(Block candleBlock, BlockBehaviour.Properties properties);
 }

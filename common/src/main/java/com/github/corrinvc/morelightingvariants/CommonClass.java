@@ -1,8 +1,8 @@
 package com.github.corrinvc.morelightingvariants;
 
-import com.github.corrinvc.morelightingvariants.block.CopperCandleBlock;
 import com.github.corrinvc.morelightingvariants.block.ModWeatheringCopper;
 import com.github.corrinvc.morelightingvariants.platform.Services;
+import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
 
@@ -24,9 +24,8 @@ public class CommonClass {
         // your own abstraction layer. You can learn more about this in our provided services class. In this example
         // we have an interface in the common code and use a loader specific implementation to delegate our call to
         // the platform specific approach.
-        if (Services.PLATFORM.isModLoaded(Constants.MOD_ID)) {
-            ModWeatheringCopper.ModWeatheringStateLists.initializeBlockMaps();
-        }
+//        if (Services.PLATFORM.isModLoaded(Constants.MOD_ID)) {
+//        }
 
 
     }

@@ -37,7 +37,6 @@ public class MoreLightingVariantsNeo {
         // project.
 
         // Use NeoForge to bootstrap the Common mod.
-        Constants.LOG.info("Hello NeoForge world!");
         CommonClass.init();
 
         bind(Registries.BLOCK, ModBlocks::register);

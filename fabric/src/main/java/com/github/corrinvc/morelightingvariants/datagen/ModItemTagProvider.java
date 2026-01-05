@@ -21,6 +21,10 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.COPPER_CANDLE,
                      ModItems.EXPOSED_COPPER_CANDLE,
                      ModItems.WEATHERED_COPPER_CANDLE,
-                     ModItems.OXIDIZED_COPPER_CANDLE);
+                     ModItems.OXIDIZED_COPPER_CANDLE,
+                     ModItems.WAXED_COPPER_CANDLE,
+                     ModItems.WAXED_EXPOSED_COPPER_CANDLE,
+                     ModItems.WAXED_WEATHERED_COPPER_CANDLE,
+                     ModItems.WAXED_OXIDIZED_COPPER_CANDLE);
     }
 }

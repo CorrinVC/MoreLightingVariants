@@ -32,9 +32,4 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     public CarvedPumpkinBlock getCarvedPumpkinBlock(BlockBehaviour.Properties properties) {
         return new CarvedPumpkinBlock(properties);
     }
-
-    @Override
-    public CandleCakeBlock getCandleCakeBlock(Block candleBlock, BlockBehaviour.Properties properties) {
-        return new CandleCakeBlock(candleBlock, properties);
-    }
 }

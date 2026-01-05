@@ -2,6 +2,8 @@ package com.github.corrinvc.morelightingvariants.registries;
 
 import com.github.corrinvc.morelightingvariants.Constants;
 import com.github.corrinvc.morelightingvariants.block.CopperCandleBlock;
+import com.github.corrinvc.morelightingvariants.block.CopperCandleCakeBlock;
+import com.github.corrinvc.morelightingvariants.block.ModWeatheringCopper;
 import com.github.corrinvc.morelightingvariants.platform.Services;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -36,6 +38,23 @@ public class ModBlocks {
             blockKey("weathered_copper_candle_cake");
     public static final ResourceKey<Block> OXIDIZED_COPPER_CANDLE_CAKE_KEY =
             blockKey("oxidized_copper_candle_cake_key");
+
+    public static final ResourceKey<Block> WAXED_COPPER_CANDLE_KEY =
+            blockKey("waxed_copper_candle");
+    public static final ResourceKey<Block> WAXED_EXPOSED_COPPER_CANDLE_KEY =
+            blockKey("waxed_exposed_copper_candle");
+    public static final ResourceKey<Block> WAXED_WEATHERED_COPPER_CANDLE_KEY =
+            blockKey("waxed_weathered_copper_candle");
+    public static final ResourceKey<Block> WAXED_OXIDIZED_COPPER_CANDLE_KEY =
+            blockKey("waxed_oxidized_copper_candle");
+    public static final ResourceKey<Block> WAXED_COPPER_CANDLE_CAKE_KEY =
+            blockKey("waxed_copper_candle_cake");
+    public static final ResourceKey<Block> WAXED_EXPOSED_COPPER_CANDLE_CAKE_KEY =
+            blockKey("waxed_exposed_copper_candle_cake");
+    public static final ResourceKey<Block> WAXED_WEATHERED_COPPER_CANDLE_CAKE_KEY =
+            blockKey("waxed_weathered_copper_candle_cake");
+    public static final ResourceKey<Block> WAXED_OXIDIZED_COPPER_CANDLE_CAKE_KEY =
+            blockKey("waxed_oxidized_copper_candle_cake");
 
     public static final Block COPPER_JACK_O_LANTERN = Services.PLATFORM.getCarvedPumpkinBlock(
             BlockBehaviour.Properties.ofFullCopy(Blocks.JACK_O_LANTERN)
@@ -73,28 +92,64 @@ public class ModBlocks {
                     .setId(OXIDIZED_COPPER_CANDLE_KEY)
     );
 
-    public static final Block COPPER_CANDLE_CAKE = Services.PLATFORM.getCandleCakeBlock(
-            COPPER_CANDLE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)
+    public static final Block COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CANDLE_CAKE)
                     .setId(COPPER_CANDLE_CAKE_KEY)
     );
-    public static final Block EXPOSED_COPPER_CANDLE_CAKE = Services.PLATFORM.getCandleCakeBlock(
-            EXPOSED_COPPER_CANDLE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)
+    public static final Block EXPOSED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) EXPOSED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)
                     .setId(EXPOSED_COPPER_CANDLE_CAKE_KEY)
     );
-    public static final Block WEATHERED_COPPER_CANDLE_CAKE = Services.PLATFORM.getCandleCakeBlock(
-            WEATHERED_COPPER_CANDLE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)
+    public static final Block WEATHERED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) WEATHERED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE).mapColor(MapColor.WARPED_STEM)
                     .setId(WEATHERED_COPPER_CANDLE_CAKE_KEY)
     );
-    public static final Block OXIDIZED_COPPER_CANDLE_CAKE = Services.PLATFORM.getCandleCakeBlock(
-            OXIDIZED_COPPER_CANDLE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE)
+    public static final Block OXIDIZED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) OXIDIZED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE).mapColor(MapColor.WARPED_NYLIUM)
                     .setId(OXIDIZED_COPPER_CANDLE_CAKE_KEY)
     );
 
+    public static final Block WAXED_COPPER_CANDLE = new CopperCandleBlock(
+            (CopperCandleBlock) COPPER_CANDLE, WAXED_COPPER_CANDLE_KEY
+    );
+    public static final Block WAXED_EXPOSED_COPPER_CANDLE = new CopperCandleBlock(
+            (CopperCandleBlock) EXPOSED_COPPER_CANDLE, WAXED_EXPOSED_COPPER_CANDLE_KEY
+    );
+    public static final Block WAXED_WEATHERED_COPPER_CANDLE = new CopperCandleBlock(
+            (CopperCandleBlock) WEATHERED_COPPER_CANDLE, WAXED_WEATHERED_COPPER_CANDLE_KEY
+    );
+    public static final Block WAXED_OXIDIZED_COPPER_CANDLE = new CopperCandleBlock(
+            (CopperCandleBlock) OXIDIZED_COPPER_CANDLE, WAXED_OXIDIZED_COPPER_CANDLE_KEY
+    );
+
+    public static final Block WAXED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) WAXED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(COPPER_CANDLE_CAKE)
+                    .setId(WAXED_COPPER_CANDLE_CAKE_KEY)
+    );
+    public static final Block WAXED_EXPOSED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) WAXED_EXPOSED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(EXPOSED_COPPER_CANDLE_CAKE)
+                    .setId(WAXED_EXPOSED_COPPER_CANDLE_CAKE_KEY)
+    );
+    public static final Block WAXED_WEATHERED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) WAXED_WEATHERED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(WEATHERED_COPPER_CANDLE_CAKE)
+                    .setId(WAXED_WEATHERED_COPPER_CANDLE_CAKE_KEY)
+    );
+    public static final Block WAXED_OXIDIZED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
+            (CopperCandleBlock) WAXED_OXIDIZED_COPPER_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(OXIDIZED_COPPER_CANDLE_CAKE)
+                    .setId(WAXED_OXIDIZED_COPPER_CANDLE_CAKE_KEY)
+    );
+
     public static void register(BiConsumer<Block, ResourceKey<Block>> consumer) {
+        ModWeatheringCopper.ModWeatheringStateLists.initializeBlockMaps();
+
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
         consumer.accept(SOUL_JACK_O_LANTERN, SOUL_JACK_O_LANTERN_KEY);
         consumer.accept(COPPER_CAMPFIRE, COPPER_CAMPFIRE_KEY);
@@ -108,6 +163,16 @@ public class ModBlocks {
         consumer.accept(EXPOSED_COPPER_CANDLE_CAKE, EXPOSED_COPPER_CANDLE_CAKE_KEY);
         consumer.accept(WEATHERED_COPPER_CANDLE_CAKE, WEATHERED_COPPER_CANDLE_CAKE_KEY);
         consumer.accept(OXIDIZED_COPPER_CANDLE_CAKE, OXIDIZED_COPPER_CANDLE_CAKE_KEY);
+
+        consumer.accept(WAXED_COPPER_CANDLE, WAXED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_EXPOSED_COPPER_CANDLE, WAXED_EXPOSED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_WEATHERED_COPPER_CANDLE, WAXED_WEATHERED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_OXIDIZED_COPPER_CANDLE, WAXED_OXIDIZED_COPPER_CANDLE_KEY);
+
+        consumer.accept(WAXED_COPPER_CANDLE_CAKE, WAXED_COPPER_CANDLE_CAKE_KEY);
+        consumer.accept(WAXED_EXPOSED_COPPER_CANDLE_CAKE, WAXED_EXPOSED_COPPER_CANDLE_CAKE_KEY);
+        consumer.accept(WAXED_WEATHERED_COPPER_CANDLE_CAKE, WAXED_WEATHERED_COPPER_CANDLE_CAKE_KEY);
+        consumer.accept(WAXED_OXIDIZED_COPPER_CANDLE_CAKE, WAXED_OXIDIZED_COPPER_CANDLE_CAKE_KEY);
     }
 
     private static ResourceKey<Block> blockKey(String name) {

@@ -1,37 +1,29 @@
 package com.github.corrinvc.morelightingvariants.block;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.InsideBlockEffectApplier;
-import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CandleBlock;
+import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.WeatheringCopper;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
 import java.util.Optional;
 
-public class CopperCandleBlock extends CandleBlock implements ModWeatheringCopper {
+public class CopperCandleCakeBlock extends CandleCakeBlock implements ModWeatheringCopper {
 
     private final WeatheringCopper.WeatherState weatheringState;
 
-    public CopperCandleBlock(CopperCandleBlock candleBlock, ResourceKey<Block> id) {
-        this(candleBlock.getAge(), BlockBehaviour.Properties.ofFullCopy(candleBlock).setId(id));
-    }
-
-    public CopperCandleBlock(WeatheringCopper.WeatherState weatheringState, Properties properties) {
-        super(properties);
-        this.weatheringState = weatheringState;
+    public CopperCandleCakeBlock(CopperCandleBlock candleBlock, Properties properties) {
+        super(candleBlock, properties);
+        this.weatheringState = candleBlock.getAge();
     }
 
     protected void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
@@ -39,12 +31,11 @@ public class CopperCandleBlock extends CandleBlock implements ModWeatheringCoppe
     }
 
     protected boolean isRandomlyTicking(BlockState state) {
-        System.out.println("COPPER CANDLE RANDOMLY TICKING: " + getNext(state).isPresent());
         return getNext(state).isPresent();
     }
 
-    @Override
-    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+    protected InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                          Player player, InteractionHand hand, BlockHitResult hitResult) {
         Optional<InteractionResult> result = useItemOnCopper(stack, state, level, pos, player, hand);
         return result.orElseGet(() -> super.useItemOn(stack, state, level, pos, player, hand, hitResult));
     }
