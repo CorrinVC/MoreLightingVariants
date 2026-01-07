@@ -67,7 +67,7 @@ loom.remapConfigurations.configureEach {
 fabricApi.configureDataGeneration {
     client = true
     modId = "${mod_id}"
-    outputDirectory = project(":common").file("src/generated/resources")
+    outputDirectory = project(":common").file("src/generated/resources/fabric")
     addToResources = false
     createSourceSet = true
 }

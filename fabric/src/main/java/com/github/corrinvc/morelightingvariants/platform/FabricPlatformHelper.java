@@ -1,7 +1,9 @@
 package com.github.corrinvc.morelightingvariants.platform;
 
 import com.github.corrinvc.morelightingvariants.platform.services.IPlatformHelper;
+import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.CarvedPumpkinBlock;
@@ -31,5 +33,9 @@ public class FabricPlatformHelper implements IPlatformHelper {
         return new CarvedPumpkinBlock(properties);
     }
 
+    @Override
+    public SimpleParticleType getSimpleParticleType(boolean overrideLimiter) {
+        return FabricParticleTypes.simple(overrideLimiter);
+    }
 
 }

@@ -3,6 +3,8 @@ package com.github.corrinvc.morelightingvariants;
 
 import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
 import com.github.corrinvc.morelightingvariants.registries.ModItems;
+import com.github.corrinvc.morelightingvariants.registries.ModParticles;
+import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.core.Registry;
@@ -16,6 +18,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.registries.RegisterEvent;
@@ -41,6 +44,7 @@ public class MoreLightingVariantsNeo {
 
         bind(Registries.BLOCK, ModBlocks::register);
         bind(Registries.ITEM, ModItems::register);
+        bind(Registries.PARTICLE_TYPE, ModParticles::register);
 
         modEventBus.addListener(this::addToCreativeTabs);
 
@@ -69,6 +73,10 @@ public class MoreLightingVariantsNeo {
             event.accept(ModBlocks.EXPOSED_COPPER_CANDLE);
             event.accept(ModBlocks.WEATHERED_COPPER_CANDLE);
             event.accept(ModBlocks.OXIDIZED_COPPER_CANDLE);
+            event.accept(ModBlocks.WAXED_COPPER_CANDLE);
+            event.accept(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE);
+            event.accept(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE);
+            event.accept(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE);
         }
     }
 
@@ -88,6 +96,11 @@ public class MoreLightingVariantsNeo {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_CAMPFIRE, ChunkSectionLayer.CUTOUT);
+        }
+
+        @SubscribeEvent
+        public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
+            event.registerSpriteSet(ModParticles.COPPER_FLAME, FlameParticle.SmallFlameProvider::new);
         }
 
     }

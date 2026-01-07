@@ -2,6 +2,7 @@ package com.github.corrinvc.morelightingvariants;
 
 import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
 import com.github.corrinvc.morelightingvariants.registries.ModItems;
+import com.github.corrinvc.morelightingvariants.registries.ModParticles;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.core.Registry;
@@ -28,6 +29,7 @@ public class MoreLightingVariantsFabric implements ModInitializer {
 
         bind(BuiltInRegistries.BLOCK, ModBlocks::register);
         bind(BuiltInRegistries.ITEM, ModItems::register);
+        bind(BuiltInRegistries.PARTICLE_TYPE, ModParticles::register);
 
         addToCreativeTabs();
 
@@ -54,6 +56,10 @@ public class MoreLightingVariantsFabric implements ModInitializer {
                     itemGroup.accept(ModBlocks.EXPOSED_COPPER_CANDLE);
                     itemGroup.accept(ModBlocks.WEATHERED_COPPER_CANDLE);
                     itemGroup.accept(ModBlocks.OXIDIZED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.WAXED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE);
                 });
     }
 }

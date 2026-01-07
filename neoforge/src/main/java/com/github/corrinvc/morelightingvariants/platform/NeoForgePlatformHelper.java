@@ -1,6 +1,7 @@
 package com.github.corrinvc.morelightingvariants.platform;
 
 import com.github.corrinvc.morelightingvariants.platform.services.IPlatformHelper;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.CarvedPumpkinBlock;
@@ -31,5 +32,10 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     @Override
     public CarvedPumpkinBlock getCarvedPumpkinBlock(BlockBehaviour.Properties properties) {
         return new CarvedPumpkinBlock(properties);
+    }
+
+    @Override
+    public SimpleParticleType getSimpleParticleType(boolean overrideLimiter) {
+        return new SimpleParticleType(overrideLimiter);
     }
 }

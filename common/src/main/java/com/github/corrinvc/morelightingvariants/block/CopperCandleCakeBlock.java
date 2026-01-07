@@ -41,6 +41,14 @@ public class CopperCandleCakeBlock extends CandleCakeBlock implements ModWeather
     }
 
     @Override
+    public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
+        if(state.getValue(LIT)) {
+            this.getParticleOffsets(state).forEach((vec3) ->
+                    CopperCandleBlock.addParticlesAndSound(level, vec3.add(pos.getX(), pos.getY(), pos.getZ()), random));
+        }
+    }
+
+    @Override
     public WeatheringCopper.WeatherState getAge() {
         return this.weatheringState;
     }
