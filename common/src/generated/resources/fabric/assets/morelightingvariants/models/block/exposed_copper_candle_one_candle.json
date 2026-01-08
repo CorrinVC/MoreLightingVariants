@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_candle",
+  "textures": {
+    "all": "morelightingvariants:block/exposed_copper_candle",
+    "particle": "morelightingvariants:block/exposed_copper_candle"
+  }
+}

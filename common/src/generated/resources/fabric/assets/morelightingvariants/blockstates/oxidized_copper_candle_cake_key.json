@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "morelightingvariants:block/oxidized_copper_candle_cake_key"
+    },
+    "lit=true": {
+      "model": "morelightingvariants:block/oxidized_copper_candle_cake_key_lit"
+    }
+  }
+}

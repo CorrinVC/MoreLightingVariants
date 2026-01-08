@@ -27,5 +27,26 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
                 block -> this.createSilkTouchDispatchTable(
                         block,  (LootPoolEntryContainer.Builder<?>)this.applyExplosionCondition(
                                 block, LootItem.lootTableItem(Items.COPPER_INGOT).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))));
+
+        add(ModBlocks.COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.EXPOSED_COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.WEATHERED_COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.OXIDIZED_COPPER_CANDLE, this::createCandleDrops);
+
+        add(ModBlocks.COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.COPPER_CANDLE));
+        add(ModBlocks.EXPOSED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.EXPOSED_COPPER_CANDLE));
+        add(ModBlocks.WEATHERED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.WEATHERED_COPPER_CANDLE));
+        add(ModBlocks.OXIDIZED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.OXIDIZED_COPPER_CANDLE));
+
+        add(ModBlocks.WAXED_COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE, this::createCandleDrops);
+        add(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE, this::createCandleDrops);
+
+        add(ModBlocks.WAXED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.WAXED_COPPER_CANDLE));
+        add(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE));
+        add(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE));
+        add(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE));
+        //dropSelf();
     }
 }

@@ -1,18 +1,8 @@
 package com.github.corrinvc.morelightingvariants;
 
 import com.github.corrinvc.morelightingvariants.platform.Services;
-import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
-import com.google.common.eventbus.Subscribe;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ItemLike;
-import net.minecraft.world.level.block.Block;
-
-import java.util.HashMap;
-import java.util.List;
 
 // This class is part of the common project meaning it is shared between all supported loaders. Code written here can only
 // import and access the vanilla codebase, libraries used by vanilla, and optionally third party libraries that provide
@@ -32,9 +22,8 @@ public class CommonClass {
         // your own abstraction layer. You can learn more about this in our provided services class. In this example
         // we have an interface in the common code and use a loader specific implementation to delegate our call to
         // the platform specific approach.
-        if (Services.PLATFORM.isModLoaded(Constants.MOD_ID)) {
-            Constants.LOG.info("Hello to " + Constants.MOD_NAME);
-        }
+//        if (Services.PLATFORM.isModLoaded(Constants.MOD_ID)) {
+//        }
 
 
     }

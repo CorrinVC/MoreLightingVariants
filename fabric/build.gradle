@@ -11,7 +11,7 @@ dependencies {
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
 
-    modImplementation "maven.modrinth:modmenu:17.0.0-alpha.1"
+    modImplementation "maven.modrinth:modmenu:16.0.0-rc.1"
 }
 
 loom {
@@ -67,7 +67,7 @@ loom.remapConfigurations.configureEach {
 fabricApi.configureDataGeneration {
     client = true
     modId = "${mod_id}"
-    outputDirectory = project(":common").file("src/generated/resources")
+    outputDirectory = project(":common").file("src/generated/resources/fabric")
     addToResources = false
     createSourceSet = true
 }

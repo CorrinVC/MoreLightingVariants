@@ -57,6 +57,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('s', Items.STICK)
                         .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                         .save(this.output);
+
+                shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_CANDLE)
+                        .pattern("s").pattern("h").pattern("c")
+                        .define('c', Items.COPPER_INGOT)
+                        .define('h', Items.HONEYCOMB)
+                        .define('s', Items.STRING)
+                        .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
+                        .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
+                        .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
+                        .save(this.output);
             }
         };
     }

@@ -37,7 +37,8 @@ configurations {
 artifacts {
     commonJava sourceSets.main.java.sourceDirectories.singleFile
     commonResources file('src/main/resources')
-    commonResources file('src/generated/resources')
+    commonResources file('src/generated/resources/fabric')
+    commonResources file('src/generated/resources/neo')
 }
 
 // Implement mcgradleconventions loader attribute

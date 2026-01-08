@@ -20,6 +20,24 @@ public class ModItems {
     public static final ResourceKey<Item> COPPER_CAMPFIRE_KEY =
             blockItemKey(ModBlocks.COPPER_CAMPFIRE_KEY);
 
+    public static final ResourceKey<Item> COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> EXPOSED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.EXPOSED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WEATHERED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WEATHERED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> OXIDIZED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.OXIDIZED_COPPER_CANDLE_KEY);
+
+    public static final ResourceKey<Item> WAXED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WAXED_EXPOSED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WAXED_WEATHERED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE_KEY);
+    public static final ResourceKey<Item> WAXED_OXIDIZED_COPPER_CANDLE_KEY =
+            blockItemKey(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE_KEY);
+
     public static final Item COPPER_JACK_O_LANTERN = createBlockItem(
             ModBlocks.COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY
     );
@@ -30,6 +48,32 @@ public class ModItems {
             ModBlocks.COPPER_CAMPFIRE,
             new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY),
             COPPER_CAMPFIRE_KEY
+    );
+
+    public static final Item COPPER_CANDLE = createBlockItem(
+            ModBlocks.COPPER_CANDLE, COPPER_CANDLE_KEY
+    );
+    public static final Item EXPOSED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY
+    );
+    public static final Item WEATHERED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY
+    );
+    public static final Item OXIDIZED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY
+    );
+
+    public static final Item WAXED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_COPPER_CANDLE, WAXED_COPPER_CANDLE_KEY
+    );
+    public static final Item WAXED_EXPOSED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_EXPOSED_COPPER_CANDLE, WAXED_EXPOSED_COPPER_CANDLE_KEY
+    );
+    public static final Item WAXED_WEATHERED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_WEATHERED_COPPER_CANDLE, WAXED_WEATHERED_COPPER_CANDLE_KEY
+    );
+    public static final Item WAXED_OXIDIZED_COPPER_CANDLE = createBlockItem(
+            ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE, WAXED_OXIDIZED_COPPER_CANDLE_KEY
     );
 
     private static Item createBlockItem(Block block, ResourceKey<Item> id) {
@@ -44,6 +88,16 @@ public class ModItems {
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
         consumer.accept(SOUL_JACK_O_LANTERN, SOUL_JACK_O_LANTERN_KEY);
         consumer.accept(COPPER_CAMPFIRE, COPPER_CAMPFIRE_KEY);
+
+        consumer.accept(COPPER_CANDLE, COPPER_CANDLE_KEY);
+        consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);
+        consumer.accept(WEATHERED_COPPER_CANDLE, WEATHERED_COPPER_CANDLE_KEY);
+        consumer.accept(OXIDIZED_COPPER_CANDLE, OXIDIZED_COPPER_CANDLE_KEY);
+
+        consumer.accept(WAXED_COPPER_CANDLE, WAXED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_EXPOSED_COPPER_CANDLE, WAXED_EXPOSED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_WEATHERED_COPPER_CANDLE, WAXED_WEATHERED_COPPER_CANDLE_KEY);
+        consumer.accept(WAXED_OXIDIZED_COPPER_CANDLE, WAXED_OXIDIZED_COPPER_CANDLE_KEY);
     }
 
     private static ResourceKey<Item> itemKey(String name) {
@@ -51,6 +105,6 @@ public class ModItems {
     }
 
     private static ResourceKey<Item> blockItemKey(ResourceKey<Block> blockKey) {
-        return itemKey(blockKey.identifier().getPath());
+        return itemKey(blockKey.location().getPath());
     }
 }

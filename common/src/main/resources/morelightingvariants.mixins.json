@@ -6,8 +6,8 @@
   "compatibilityLevel": "JAVA_18",
   "mixins": [],
   "client": [
-    "MixinMinecraft",
-    "block.MixinCarvedPumpkinBlock"
+    "block.MixinCarvedPumpkinBlock",
+    "entity.MixinLightningBolt"
   ],
   "server": [],
   "injectors": {
