@@ -1,6 +1,5 @@
 package com.github.corrinvc.morelightingvariants.datagen;
 
-import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
 import com.github.corrinvc.morelightingvariants.registries.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;

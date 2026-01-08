@@ -1,8 +1,6 @@
 package com.github.corrinvc.morelightingvariants.platform.services;
 
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CandleCakeBlock;
 import net.minecraft.world.level.block.CarvedPumpkinBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 

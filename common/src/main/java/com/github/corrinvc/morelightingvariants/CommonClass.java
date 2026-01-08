@@ -1,8 +1,6 @@
 package com.github.corrinvc.morelightingvariants;
 
-import com.github.corrinvc.morelightingvariants.block.ModWeatheringCopper;
 import com.github.corrinvc.morelightingvariants.platform.Services;
-import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.item.Items;
 
