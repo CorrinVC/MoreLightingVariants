@@ -105,6 +105,6 @@ public class ModItems {
     }
 
     private static ResourceKey<Item> blockItemKey(ResourceKey<Block> blockKey) {
-        return itemKey(blockKey.location().getPath());
+        return itemKey(blockKey.identifier().getPath());
     }
 }

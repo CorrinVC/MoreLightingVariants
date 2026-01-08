@@ -58,7 +58,7 @@ public class MoreLightingVariantsNeo {
         modEventBus.addListener((RegisterEvent event) -> {
             if(registry.equals(event.getRegistryKey())) {
                 source.accept((t, key) ->
-                        event.register(registry, key.location(), () -> t));
+                        event.register(registry, key.identifier(), () -> t));
             }
         });
     }
