@@ -12,6 +12,6 @@ public class ModParticleDescriptionProvider extends ParticleDescriptionProvider 
 
     @Override
     protected void addDescriptions() {
-        spriteSet(ModParticles.COPPER_FLAME, ModParticles.COPPER_FLAME_KEY.location());
+        spriteSet(ModParticles.COPPER_FLAME, ModParticles.COPPER_FLAME_KEY.identifier());
     }
 }
