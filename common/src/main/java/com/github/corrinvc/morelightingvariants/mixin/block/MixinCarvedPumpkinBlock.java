@@ -23,6 +23,5 @@ public abstract class MixinCarvedPumpkinBlock {
     @Inject(method = "<clinit>", at = @At("RETURN"))
     private static void adjustPumpkinPredicate(CallbackInfo ci) {
         PUMPKINS_PREDICATE = (blockState) -> blockState != null && blockState.getBlock() instanceof CarvedPumpkinBlock;
-        System.out.println("===\tPUMPKINS PREDICATE MODIFIED\t===");
     }
 }

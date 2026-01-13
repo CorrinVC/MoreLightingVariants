@@ -31,9 +31,4 @@ public class NeoForgePlatformHelper implements IPlatformHelper {
     public CarvedPumpkinBlock getCarvedPumpkinBlock(BlockBehaviour.Properties properties) {
         return new CarvedPumpkinBlock(properties);
     }
-
-    @Override
-    public SimpleParticleType getSimpleParticleType(boolean overrideLimiter) {
-        return new SimpleParticleType(overrideLimiter);
-    }
 }

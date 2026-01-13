@@ -8,9 +8,11 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
+import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 
 import java.util.concurrent.CompletableFuture;
@@ -58,6 +60,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                         .save(this.output);
 
+                // COPPER CANDLE
                 shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_CANDLE)
                         .pattern("s").pattern("h").pattern("c")
                         .define('c', Items.COPPER_INGOT)
@@ -67,6 +70,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
                         .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                         .save(this.output);
+
+                // WAXED COPPER CANDLE
+                shapeless(RecipeCategory.DECORATIONS, ModBlocks.WAXED_COPPER_CANDLE)
+                        .requires(ModBlocks.COPPER_CANDLE)
+                        .requires(Items.HONEYCOMB)
+                        .unlockedBy(getHasName(ModBlocks.COPPER_CANDLE), has(ModBlocks.COPPER_CANDLE))
+                        .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
+                        .save(this.output);
+
+                // WAXED EXPOSED COPPER CANDLE
+                shapeless(RecipeCategory.DECORATIONS, ModBlocks.WAXED_EXPOSED_COPPER_CANDLE)
+                        .requires(ModBlocks.EXPOSED_COPPER_CANDLE)
+                        .requires(Items.HONEYCOMB)
+                        .unlockedBy(getHasName(ModBlocks.EXPOSED_COPPER_CANDLE), has(ModBlocks.EXPOSED_COPPER_CANDLE))
+                        .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
+                        .save(this.output);
+
+                // WAXED WEATHERED COPPER CANDLE
+                shapeless(RecipeCategory.DECORATIONS, ModBlocks.WAXED_WEATHERED_COPPER_CANDLE)
+                        .requires(ModBlocks.WEATHERED_COPPER_CANDLE)
+                        .requires(Items.HONEYCOMB)
+                        .unlockedBy(getHasName(ModBlocks.WEATHERED_COPPER_CANDLE), has(ModBlocks.WEATHERED_COPPER_CANDLE))
+                        .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
+                        .save(this.output);
+
+                // WAXED OXIDIZED COPPER CANDLE
+                shapeless(RecipeCategory.DECORATIONS, ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE)
+                        .requires(ModBlocks.OXIDIZED_COPPER_CANDLE)
+                        .requires(Items.HONEYCOMB)
+                        .unlockedBy(getHasName(ModBlocks.OXIDIZED_COPPER_CANDLE), has(ModBlocks.OXIDIZED_COPPER_CANDLE))
+                        .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
+                        .save(this.output);
+
             }
         };
     }

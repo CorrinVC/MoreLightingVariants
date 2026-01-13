@@ -1,6 +1,5 @@
 package com.github.corrinvc.morelightingvariants.platform.services;
 
-import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.world.level.block.CarvedPumpkinBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -39,5 +38,4 @@ public interface IPlatformHelper {
     }
 
     CarvedPumpkinBlock getCarvedPumpkinBlock(BlockBehaviour.Properties properties);
-    SimpleParticleType getSimpleParticleType(boolean overrideLimiter);
 }
