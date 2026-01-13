@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "morelightingvariants:weathered_copper_candle",
+    "minecraft:honeycomb"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morelightingvariants:waxed_weathered_copper_candle"
+  }
+}

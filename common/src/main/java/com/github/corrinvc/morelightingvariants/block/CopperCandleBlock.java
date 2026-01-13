@@ -1,8 +1,8 @@
 package com.github.corrinvc.morelightingvariants.block;
 
-import com.github.corrinvc.morelightingvariants.registries.ModParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
@@ -41,7 +41,6 @@ public class CopperCandleBlock extends CandleBlock implements ModWeatheringCoppe
     }
 
     protected boolean isRandomlyTicking(BlockState state) {
-        System.out.println("COPPER CANDLE RANDOMLY TICKING: " + getNext(state).isPresent());
         return getNext(state).isPresent();
     }
 
@@ -55,11 +54,11 @@ public class CopperCandleBlock extends CandleBlock implements ModWeatheringCoppe
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if(state.getValue(LIT)) {
             this.getParticleOffsets(state).forEach((vec3) ->
-                    addParticlesAndSound(level, vec3.add(pos.getX(), pos.getY(), pos.getZ()), random));
+                    addParticlesAndSound(level, vec3.add(pos.getX(), pos.getY(), pos.getZ()), random, ParticleTypes.COPPER_FIRE_FLAME));
         }
     }
 
-    public static void addParticlesAndSound(Level level, Vec3 offset, RandomSource random) {
+    public static void addParticlesAndSound(Level level, Vec3 offset, RandomSource random, SimpleParticleType particle) {
         float f = random.nextFloat();
         if(f < 0.3f) {
             level.addParticle(ParticleTypes.SMOKE, offset.x, offset.y, offset.z, 0.0f, 0.0f, 0.0f);
@@ -70,7 +69,7 @@ public class CopperCandleBlock extends CandleBlock implements ModWeatheringCoppe
             }
         }
 
-        level.addParticle(ModParticles.COPPER_FLAME, offset.x, offset.y, offset.z, 0.0f, 0.0f, 0.0f);
+        level.addParticle(particle, offset.x, offset.y, offset.z, 0.0f, 0.0f, 0.0f);
     }
 
     @Override

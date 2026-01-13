@@ -28,6 +28,8 @@ Copper Candles mimic the functionality of both vanilla candles and vanilla oxidi
 
 - Be oxidized by a lightning strike
 
+- Combined with a Honeycomb in a Crafting Table to produce their Waxed variants
+
 
 <b><ins>Plans for Future Releases:</ins></b>
 

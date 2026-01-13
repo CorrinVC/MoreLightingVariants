@@ -1,6 +1,7 @@
 package com.github.corrinvc.morelightingvariants.block;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
@@ -42,7 +43,7 @@ public class CopperCandleCakeBlock extends CandleCakeBlock implements ModWeather
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if(state.getValue(LIT)) {
             this.getParticleOffsets(state).forEach((vec3) ->
-                    CopperCandleBlock.addParticlesAndSound(level, vec3.add(pos.getX(), pos.getY(), pos.getZ()), random));
+                    CopperCandleBlock.addParticlesAndSound(level, vec3.add(pos.getX(), pos.getY(), pos.getZ()), random, ParticleTypes.COPPER_FIRE_FLAME));
         }
     }
 

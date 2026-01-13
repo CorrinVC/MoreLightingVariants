@@ -3,7 +3,6 @@ package com.github.corrinvc.morelightingvariants;
 
 import com.github.corrinvc.morelightingvariants.registries.ModBlocks;
 import com.github.corrinvc.morelightingvariants.registries.ModItems;
-import com.github.corrinvc.morelightingvariants.registries.ModParticles;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
@@ -44,7 +43,6 @@ public class MoreLightingVariantsNeo {
 
         bind(Registries.BLOCK, ModBlocks::register);
         bind(Registries.ITEM, ModItems::register);
-        bind(Registries.PARTICLE_TYPE, ModParticles::register);
 
         modEventBus.addListener(this::addToCreativeTabs);
 
@@ -96,11 +94,6 @@ public class MoreLightingVariantsNeo {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ItemBlockRenderTypes.setRenderLayer(ModBlocks.COPPER_CAMPFIRE, ChunkSectionLayer.CUTOUT);
-        }
-
-        @SubscribeEvent
-        public static void registerParticleProviders(RegisterParticleProvidersEvent event) {
-            event.registerSpriteSet(ModParticles.COPPER_FLAME, FlameParticle.SmallFlameProvider::new);
         }
 
     }

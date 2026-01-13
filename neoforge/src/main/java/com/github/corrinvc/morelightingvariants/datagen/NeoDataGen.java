@@ -9,8 +9,6 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 public class NeoDataGen {
 
     @SubscribeEvent
-    public static void gatherData(GatherDataEvent.Client event) {
-        event.createProvider(ModParticleDescriptionProvider::new);
-    }
+    public static void gatherData(GatherDataEvent.Client event) {}
 
 }

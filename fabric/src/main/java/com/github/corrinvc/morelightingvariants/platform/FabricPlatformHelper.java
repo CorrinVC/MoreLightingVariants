@@ -31,9 +31,4 @@ public class FabricPlatformHelper implements IPlatformHelper {
         return new CarvedPumpkinBlock(properties);
     }
 
-    @Override
-    public SimpleParticleType getSimpleParticleType(boolean overrideLimiter) {
-        return FabricParticleTypes.simple(overrideLimiter);
-    }
-
 }
