@@ -1,9 +1,7 @@
 package com.github.corrinvc.morelightingvariants.registries;
 
 import com.github.corrinvc.morelightingvariants.Constants;
-import com.github.corrinvc.morelightingvariants.block.CopperCandleBlock;
-import com.github.corrinvc.morelightingvariants.block.CopperCandleCakeBlock;
-import com.github.corrinvc.morelightingvariants.block.ModWeatheringCopper;
+import com.github.corrinvc.morelightingvariants.block.*;
 import com.github.corrinvc.morelightingvariants.platform.Services;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -21,6 +19,11 @@ public class ModBlocks {
             blockKey("soul_jack_o_lantern");
     public static final ResourceKey<Block> COPPER_CAMPFIRE_KEY =
             blockKey("copper_campfire");
+
+    public static final ResourceKey<Block> SOUL_CANDLE_KEY =
+            blockKey("soul_candle");
+    public static final ResourceKey<Block> SOUL_CANDLE_CAKE_KEY =
+            blockKey("soul_candle_cake");
 
     public static final ResourceKey<Block> COPPER_CANDLE_KEY =
             blockKey("copper_candle");
@@ -71,9 +74,19 @@ public class ModBlocks {
                     .setId(COPPER_CAMPFIRE_KEY)
     );
 
+    public static final Block SOUL_CANDLE = new SoulCandleBlock(
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).mapColor(MapColor.COLOR_BROWN)
+                    .setId(SOUL_CANDLE_KEY)
+    );
+    public static final Block SOUL_CANDLE_CAKE = new SoulCandleCakeBlock(
+            SOUL_CANDLE,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE).mapColor(MapColor.COLOR_BROWN)
+                    .setId(SOUL_CANDLE_CAKE_KEY)
+    );
+
     public static final Block COPPER_CANDLE = new CopperCandleBlock(
             WeatheringCopper.WeatherState.UNAFFECTED,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CANDLE)
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE).mapColor(MapColor.COLOR_ORANGE)
                     .setId(COPPER_CANDLE_KEY)
     );
     public static final Block EXPOSED_COPPER_CANDLE = new CopperCandleBlock(
@@ -94,7 +107,7 @@ public class ModBlocks {
 
     public static final Block COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
             (CopperCandleBlock) COPPER_CANDLE,
-            BlockBehaviour.Properties.ofFullCopy(Blocks.ORANGE_CANDLE_CAKE)
+            BlockBehaviour.Properties.ofFullCopy(Blocks.CANDLE_CAKE).mapColor(MapColor.COLOR_ORANGE)
                     .setId(COPPER_CANDLE_CAKE_KEY)
     );
     public static final Block EXPOSED_COPPER_CANDLE_CAKE = new CopperCandleCakeBlock(
@@ -153,6 +166,9 @@ public class ModBlocks {
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
         consumer.accept(SOUL_JACK_O_LANTERN, SOUL_JACK_O_LANTERN_KEY);
         consumer.accept(COPPER_CAMPFIRE, COPPER_CAMPFIRE_KEY);
+
+        consumer.accept(SOUL_CANDLE, SOUL_CANDLE_KEY);
+        consumer.accept(SOUL_CANDLE_CAKE, SOUL_CANDLE_CAKE_KEY);
 
         consumer.accept(COPPER_CANDLE, COPPER_CANDLE_KEY);
         consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);

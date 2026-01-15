@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": "#minecraft:soul_fire_base_blocks",
+    "h": "minecraft:honeycomb",
+    "s": "minecraft:string"
+  },
+  "pattern": [
+    "s",
+    "h",
+    "S"
+  ],
+  "result": {
+    "count": 1,
+    "id": "morelightingvariants:soul_candle"
+  }
+}

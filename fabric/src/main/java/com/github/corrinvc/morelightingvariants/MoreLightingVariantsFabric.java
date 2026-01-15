@@ -58,6 +58,7 @@ public class MoreLightingVariantsFabric implements ModInitializer {
                     itemGroup.accept(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE);
                     itemGroup.accept(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE);
                     itemGroup.accept(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE);
+                    itemGroup.accept(ModBlocks.SOUL_CANDLE);
                 });
     }
 }

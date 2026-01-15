@@ -17,7 +17,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void addTags(HolderLookup.Provider wrapperLookup) {
         valueLookupBuilder(ItemTags.CANDLES)
-                .add(ModItems.COPPER_CANDLE,
+                .add(ModItems.SOUL_CANDLE,
+                     ModItems.COPPER_CANDLE,
                      ModItems.EXPOSED_COPPER_CANDLE,
                      ModItems.WEATHERED_COPPER_CANDLE,
                      ModItems.OXIDIZED_COPPER_CANDLE,

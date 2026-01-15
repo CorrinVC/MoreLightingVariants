@@ -19,7 +19,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         valueLookupBuilder(BlockTags.CAMPFIRES).add(ModBlocks.COPPER_CAMPFIRE);
 
         valueLookupBuilder(BlockTags.CANDLES)
-                .add(ModBlocks.COPPER_CANDLE,
+                .add(ModBlocks.SOUL_CANDLE,
+                     ModBlocks.COPPER_CANDLE,
                      ModBlocks.EXPOSED_COPPER_CANDLE,
                      ModBlocks.WEATHERED_COPPER_CANDLE,
                      ModBlocks.OXIDIZED_COPPER_CANDLE,
@@ -28,7 +29,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                      ModBlocks.WAXED_WEATHERED_COPPER_CANDLE,
                      ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE);
         valueLookupBuilder(BlockTags.CANDLE_CAKES)
-                .add(ModBlocks.COPPER_CANDLE_CAKE,
+                .add(ModBlocks.SOUL_CANDLE_CAKE,
+                     ModBlocks.COPPER_CANDLE_CAKE,
                      ModBlocks.EXPOSED_COPPER_CANDLE_CAKE,
                      ModBlocks.WEATHERED_COPPER_CANDLE_CAKE,
                      ModBlocks.OXIDIZED_COPPER_CANDLE_CAKE,

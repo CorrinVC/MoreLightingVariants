@@ -20,6 +20,9 @@ public class ModItems {
     public static final ResourceKey<Item> COPPER_CAMPFIRE_KEY =
             blockItemKey(ModBlocks.COPPER_CAMPFIRE_KEY);
 
+    public static final ResourceKey<Item> SOUL_CANDLE_KEY =
+            blockItemKey(ModBlocks.SOUL_CANDLE_KEY);
+
     public static final ResourceKey<Item> COPPER_CANDLE_KEY =
             blockItemKey(ModBlocks.COPPER_CANDLE_KEY);
     public static final ResourceKey<Item> EXPOSED_COPPER_CANDLE_KEY =
@@ -48,6 +51,10 @@ public class ModItems {
             ModBlocks.COPPER_CAMPFIRE,
             new Item.Properties().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY),
             COPPER_CAMPFIRE_KEY
+    );
+
+    public static final Item SOUL_CANDLE = createBlockItem(
+            ModBlocks.SOUL_CANDLE, SOUL_CANDLE_KEY
     );
 
     public static final Item COPPER_CANDLE = createBlockItem(
@@ -88,6 +95,8 @@ public class ModItems {
         consumer.accept(COPPER_JACK_O_LANTERN, COPPER_JACK_O_LANTERN_KEY);
         consumer.accept(SOUL_JACK_O_LANTERN, SOUL_JACK_O_LANTERN_KEY);
         consumer.accept(COPPER_CAMPFIRE, COPPER_CAMPFIRE_KEY);
+
+        consumer.accept(SOUL_CANDLE, SOUL_CANDLE_KEY);
 
         consumer.accept(COPPER_CANDLE, COPPER_CANDLE_KEY);
         consumer.accept(EXPOSED_COPPER_CANDLE, EXPOSED_COPPER_CANDLE_KEY);
