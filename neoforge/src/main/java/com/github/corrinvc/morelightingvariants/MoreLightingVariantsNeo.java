@@ -75,6 +75,7 @@ public class MoreLightingVariantsNeo {
             event.accept(ModBlocks.WAXED_EXPOSED_COPPER_CANDLE);
             event.accept(ModBlocks.WAXED_WEATHERED_COPPER_CANDLE);
             event.accept(ModBlocks.WAXED_OXIDIZED_COPPER_CANDLE);
+            event.accept(ModBlocks.SOUL_CANDLE);
         }
     }
 

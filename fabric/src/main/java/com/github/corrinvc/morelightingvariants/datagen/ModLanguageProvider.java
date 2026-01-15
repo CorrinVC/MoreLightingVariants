@@ -19,6 +19,8 @@ public class ModLanguageProvider extends FabricLanguageProvider {
         builder.add(ModBlocks.SOUL_JACK_O_LANTERN, "Soul Jack o'Lantern");
         builder.add(ModBlocks.COPPER_CAMPFIRE, "Copper Campfire");
 
+        builder.add(ModBlocks.SOUL_CANDLE, "Soul Candle");
+
         builder.add(ModBlocks.COPPER_CANDLE, "Copper Candle");
         builder.add(ModBlocks.EXPOSED_COPPER_CANDLE, "Exposed Copper Candle");
         builder.add(ModBlocks.WEATHERED_COPPER_CANDLE, "Weathered Copper Candle");

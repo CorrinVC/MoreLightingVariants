@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.data.recipes.RecipeOutput;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
@@ -59,6 +60,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('s', Items.STICK)
                         .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
                         .save(this.output);
+
+                // SOUL CANDLE
+                shaped(RecipeCategory.DECORATIONS, ModBlocks.SOUL_CANDLE)
+                        .pattern("s").pattern("h").pattern("S")
+                        .define('h', Items.HONEYCOMB)
+                        .define('S', ItemTags.SOUL_FIRE_BASE_BLOCKS)
+                        .define('s', Items.STRING)
+                        .unlockedBy(getHasName(Items.STRING), has(Items.STRING))
+                        .unlockedBy(getHasName(Items.HONEYCOMB), has(Items.HONEYCOMB))
+                        .unlockedBy("has_soul_sand", has(ItemTags.SOUL_FIRE_BASE_BLOCKS))
+                        .save(this.output);
+
 
                 // COPPER CANDLE
                 shaped(RecipeCategory.DECORATIONS, ModBlocks.COPPER_CANDLE)

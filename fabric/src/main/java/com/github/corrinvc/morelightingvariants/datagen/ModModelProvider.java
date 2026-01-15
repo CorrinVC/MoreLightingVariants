@@ -25,8 +25,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.createPumpkinVariant(ModBlocks.COPPER_JACK_O_LANTERN, TextureMapping.column(Blocks.PUMPKIN));
         blockStateModelGenerator.createPumpkinVariant(ModBlocks.SOUL_JACK_O_LANTERN, TextureMapping.column(Blocks.PUMPKIN));
 
-        // TEMPORARY -- NEEDS TESTING
         blockStateModelGenerator.createCampfires(ModBlocks.COPPER_CAMPFIRE);
+
+        blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.SOUL_CANDLE, ModBlocks.SOUL_CANDLE_CAKE);
 
         blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.COPPER_CANDLE, ModBlocks.COPPER_CANDLE_CAKE);
         blockStateModelGenerator.createCandleAndCandleCake(ModBlocks.EXPOSED_COPPER_CANDLE, ModBlocks.EXPOSED_COPPER_CANDLE_CAKE);

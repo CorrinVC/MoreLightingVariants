@@ -28,6 +28,9 @@ public class ModBlockLootTableProvider extends FabricBlockLootTableProvider {
                         block,  (LootPoolEntryContainer.Builder<?>)this.applyExplosionCondition(
                                 block, LootItem.lootTableItem(Items.COPPER_INGOT).apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0f))))));
 
+        add(ModBlocks.SOUL_CANDLE, this::createCandleDrops);
+        add(ModBlocks.SOUL_CANDLE_CAKE, createCandleCakeDrops(ModBlocks.SOUL_CANDLE));
+
         add(ModBlocks.COPPER_CANDLE, this::createCandleDrops);
         add(ModBlocks.EXPOSED_COPPER_CANDLE, this::createCandleDrops);
         add(ModBlocks.WEATHERED_COPPER_CANDLE, this::createCandleDrops);
